@@ -6,6 +6,15 @@
 #include <string>
 #include <vector>
 
+struct bitset128 {
+    bitset64 s[2];
+    bitset128();
+    void set(size_t idx);
+    std::string str();
+};
+
+typedef std::vector <std::vector <bitset128> > partition_matrix;
+
 graph reverse_graph(graph& forward);
 
 size_t str_to_size(std::string str);

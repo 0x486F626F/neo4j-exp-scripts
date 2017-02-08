@@ -122,8 +122,8 @@ void output_partition_matrix(partition_matrix& matrix, std::string graphname) {
     fout << "64 2 " << matrix.size() << std::endl;
     for (size_t i = 0; i < matrix.size(); i ++) {
         progress_bar(i, matrix.size());
-        fout << matrix[i][0] << " " << matrix[i][1] << " " << matrix[i][2] << std::endl;
-        fout << matrix[i][0] << " " << matrix[i][3] << " " << matrix[i][4] << std::endl;
+        fout << matrix[i][0].str() << " " << matrix[i][1].str() << " " << matrix[i][2].str() << std::endl;
+        fout << matrix[i][0].str() << " " << matrix[i][3].str() << " " << matrix[i][4].str() << std::endl;
     }
 }
 
@@ -147,4 +147,19 @@ void output_node_csv(graph& dgraph) {
         progress_bar(i, dgraph.size());
         fout << i + 1 << "," << i + 1 << ",Vertex" << std::endl;
     }
+}
+
+bitset128::bitset128() {
+    s[0] = s[1] = 0;
+}
+
+void bitset128::set(size_t idx) {
+    if (idx < 64) s[0] |= ((long long)1 << idx);
+    else s[1] |= ((long long)1 << (idx - 64));
+}
+
+std::string bitset128::str() {
+    std::ostringstream strout;
+    strout << s[0] << " " << s[1];
+    return strout.str();
 }

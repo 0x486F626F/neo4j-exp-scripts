@@ -13,4 +13,4 @@ partition:
 	g++ -o partition -O2 main-partition.cc util.cc partition_matrix.cc
 
 clear:
-	rm reindex landmark partition lscc
+	rm reindex landmark partition 

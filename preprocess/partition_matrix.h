@@ -1,7 +1,7 @@
 #ifndef PARTITION_MATRIX_H
 #define PARTITION_MATRIX_H
 
-#include "typedef.h"
+#include "util.h"
 
 #include <string>
 
