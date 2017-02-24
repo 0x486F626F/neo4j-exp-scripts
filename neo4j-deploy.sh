@@ -21,7 +21,7 @@ chmod +x ../../../neo4j/lib/partition-landmark.jar
 cd ../../../neo4j/bin
 git clone https://github.com/hobozhang/neo4j-exp-scripts.git
 mv neo4j-exp-scripts/* .
-rm neo4j-exp-scripts -r
+rm neo4j-exp-scripts -rf
 
 cd preprocess
 make all
