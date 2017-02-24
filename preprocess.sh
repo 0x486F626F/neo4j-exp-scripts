@@ -1,6 +1,6 @@
-$graph=$1
-$total_queryies=$2
-$selected_queries=$3
+graph=$1
+total_queryies=$2
+selected_queries=$3
 
 ./preprocess/reindex $graph
 
