@@ -1,12 +1,12 @@
-graph=$1
-total_queryies=$2
-selected_queries=$3
+GRAPH=$1
+ALLQUERY=$2
+TOPQUERY=$3
 
-./preprocess/reindex $graph
+./preprocess/reindex $GRAPH
 
 ./neo4j stop
-rm ../data/databases/graph.db -r
-./neo4j-import --into ../data/databases/graph.db --nodes node.csv --relationships edge.csv
+rm ../data/databases/GRAPH.db -r
+./neo4j-import --into ../data/databases/GRAPH.db --nodes node.csv --relationships edge.csv
 
 bash start-neo4j.sh
 
@@ -14,6 +14,6 @@ bash start-neo4j.sh
 ./neo4j-shell -c "CREATE INDEX ON :Vertex(id);"
 
 size=`grep -vc '^$' node.csv`
-bash generate-queries.sh $total_queryies $selected_queries $size $graph_$selected_queries.sh
+bash generate-queries.sh $ALLQUERY $TOPQUERY $size $GRAPH_$TOPQUERY.sh
 
 ./neo4j stop
