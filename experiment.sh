@@ -10,9 +10,9 @@ gpmetis $GRAPH.metis $PARTITION
 ./preprocess/LANDMARK $GRAPH $LANDMARK
 ./preprocess/PARTITION $GRAPH $PARTITION
 
-cp $GRAPH.lm2v LANDMARK-vertex-matrix.txt
-cp $GRAPH.v2lm vertex-LANDMARK-matrix.txt
-cp $GRAPH.pt   PARTITION-bits.txt
+cp $GRAPH.lm2v landmark-vertex-matrix.txt
+cp $GRAPH.v2lm vertex-landmark-matrix.txt
+cp $GRAPH.pt   partition-bits.txt
 
 bash start-neo4j.sh
 head -10 $QUERY > tmp.sh
