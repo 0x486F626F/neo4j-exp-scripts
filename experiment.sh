@@ -7,8 +7,8 @@ QUERY=$1-$4.sh
 echo Graph $GRAPH Landmark $LANDMARK Partition $PARTITION
 
 gpmetis $GRAPH.metis $PARTITION
-./preprocess/LANDMARK $GRAPH $LANDMARK
-./preprocess/PARTITION $GRAPH $PARTITION
+./preprocess/landmark $GRAPH $LANDMARK
+./preprocess/partition $GRAPH $PARTITION
 
 cp $GRAPH.lm2v landmark-vertex-matrix.txt
 cp $GRAPH.v2lm vertex-landmark-matrix.txt
