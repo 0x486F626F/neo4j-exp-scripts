@@ -14,6 +14,6 @@ bash start-neo4j.sh
 ./neo4j-shell -c "CREATE INDEX ON :Vertex(id);"
 
 size=`grep -vc '^$' node.csv`
-bash generate-queries.sh $ALLQUERY $TOPQUERY $size $GRAPH_$TOPQUERY.sh
+bash generate-queries.sh $ALLQUERY $TOPQUERY $size $GRAPH-$TOPQUERY.sh
 
 ./neo4j stop

@@ -7,7 +7,7 @@ cp ../lib/original.jar ../lib/neo4j-GRAPH-algo-3.0.6-SNAPSHOT.jar
 bash preprocess.sh $GRAPH $ALLQUERY $TOPQUERY
 
 bash start-neo4j.sh
-bash run.sh $GRAPH_$TOPQUERY.sh $runs $GRAPH_original
+bash run.sh $GRAPH-$TOPQUERY.sh $runs $GRAPH-original
 ./neo4j stop
 
 cp ../lib/partition-landmark.jar ../lib/neo4j-GRAPH-algo-3.0.6-SNAPSHOT.jar

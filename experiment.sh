@@ -3,7 +3,7 @@ LANDMARK=$2
 PARTITION=$3
 TOPQUERY=$4
 RUNS=$5
-QUERY=$1_$4.sh
+QUERY=$1-$4.sh
 echo Graph $GRAPH Landmark $LANDMARK Partition $PARTITION
 
 gpmetis $GRAPH.metis $PARTITION
@@ -20,8 +20,8 @@ bash tmp.sh
 rm tmp.sh
 
 echo Start Experiment
-NAME=$GRAPH_$LANDMARK_$PARTITION
+NAME=$GRAPH-$LANDMARK-$PARTITION
 bash run.sh $QUERY $RUNS $NAME
 ./neo4j stop
 
-cat $GRAPH_original_*.log $NAME_*.log | python analysis.py $TOPQUERY $RUNS > $NAME.sum 
+cat $GRAPH-original-*.log $NAME-*.log | python analysis.py $TOPQUERY $RUNS > $NAME.sum 
