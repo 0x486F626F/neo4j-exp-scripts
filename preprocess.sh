@@ -5,7 +5,7 @@ TOPQUERY=$3
 ./preprocess/reindex $GRAPH
 
 ./neo4j stop
-rm ../data/databases/GRAPH.db -r
+rm ../data/databases/graph.db -r
 ./neo4j-import --into ../data/databases/graph.db --nodes node.csv --relationships edge.csv
 
 bash start-neo4j.sh
