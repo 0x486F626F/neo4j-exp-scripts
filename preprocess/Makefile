@@ -1,4 +1,4 @@
-all: reindex landmark partition lscc
+all: reindex landmark partition
 
 lscc:
 	g++ -o lscc -O2 util.cc tarjan.cc main-lscc.cc
