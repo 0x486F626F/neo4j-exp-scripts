@@ -1,0 +1,5 @@
+simulator
+.*.swp
+*.o
+*.edge
+*.txt
