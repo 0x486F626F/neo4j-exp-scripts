@@ -1,3 +1,4 @@
+#include "bfs.h"
 #include "graph.h"
 
 #include <iostream>
@@ -65,7 +66,7 @@ std::pair <int, unsigned int> bidirectional_bfs_one_shortest(Node* start, Node* 
 
 
     unsigned int dist = 0xffffffff;
-    for (std::map <unsigned int,unsigned int>::iterator it=l_map.begin();it!=l_map.end();it++)
+    for(std::map<unsigned int,unsigned int>::iterator it=l_map.begin();it!=l_map.end();it++)
         if (r_map.find(it->first) != r_map.end())
             dist = std::min(dist, r_map[it->first] + l_map[it->first]);
     return std::make_pair(int(dist), dequeue_count);

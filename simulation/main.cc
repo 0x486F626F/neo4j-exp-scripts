@@ -14,11 +14,16 @@ int main() {
         fin >> l >> r;
         std::cerr << "Query " << i + 1 << ": From " << l << " To " << r << std::endl;
         int d1 = bfs(g.fgraph[l], g.rgraph[r]); 
-        std::pair <int, unsigned int> d2 = bidirectional_bfs_one_shortest(g.fgraph[l], g.rgraph[r]);
         std::cout << d1 << std::endl;
-        std::cout << d2.first << " " << d2.second << std::endl;
 
+        std::pair <int, unsigned int> d2 = bidirectional_bfs_one_shortest(g.fgraph[l], g.rgraph[r]);
+        std::cout << d2.first << " " << d2.second << std::endl;
         if (d1 != d2.first) break;
+
+        std::pair <int, unsigned int> d3 = do_bidirectional_bfs_one_shortest(g.fgraph[l], g.rgraph[r]);
+        std::cout << d3.first << " " << d3.second << std::endl;
+
+        if (d1 != d3.first) break;
     }
     return 0;
 }
