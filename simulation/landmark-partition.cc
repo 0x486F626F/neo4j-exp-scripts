@@ -63,7 +63,7 @@ void load_data() {
 int upperbound(int start_id, int end_id) {
     int result = v2lm.size();
     for (int i = 0; i < v2lm[start_id].size(); i ++)
-        if (v2lm[start_id][i] >= 0 && lm2v[end_id][i])
+        if (v2lm[start_id][i] >= 0 && lm2v[end_id][i] >= 0)
             result = std::min(result, v2lm[start_id][i] + lm2v[end_id][i]);
     return result;
 }
